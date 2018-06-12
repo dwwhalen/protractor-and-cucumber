@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html id="ng-app" xmlns:ng="http://angularjs.org" ng-app="app" ng-cloak>
+
+<head>
+  <title>Cucumber Protractor tutorial!</title>
+</head>
+
+<body>
+
+  <button class="simple-button e2e-start-button" ng-click="buttonClicked = true;">
+  Start!
+</button>
+  <p class="result e2e-result" ng-show="buttonClicked">
+    Button clicked!
+  </p>
+
+  <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
