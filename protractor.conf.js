@@ -15,5 +15,8 @@ exports.config = {
   ],
   cucumberOpts: {
     require: ['./step_definitions/*.js']
-  }
+  },
+  suites:{
+    smoke: 'features/calculator.feature'
+    },
 };

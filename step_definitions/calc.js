@@ -38,7 +38,7 @@ var steps = function () {
     // callback(null, 'pending');
   });
 
-  this.Then(/^the result is (\d+)$/, function (expectedResult, callback) {
+  this.Then(/^the result is "([^"]*)"$/, function (expectedResult, callback) {
     expect(latestResult.getText()).to.eventually.equal(expectedResult)
     .and.notify(callback);
   });

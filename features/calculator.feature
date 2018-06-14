@@ -1,14 +1,15 @@
 Feature: Caculator
-  Scenario: Adding
+@calc
+  Scenario Outline: Adding
     Given I view the Calculator page
-    When I set the first number to "1"
-    And I set the second number to "2"
+    When I set the first number to "<first_number>"
+    And I set the second number to "<second_number>"
     And I click submit
-    Then the result is 3
-
-      Scenario: Adding Again
-    Given I view the Calculator page
-    When I set the first number to "12"
-    And I set the second number to "22"
-    And I click submit
-    Then the result is 34
+    Then the result is "<result>"
+    Examples:
+      | first_number | second_number | result |
+      | 1            | 2             | 3      |
+      | 4            | 2             | 6      |
+      | 5            | 2             | 7      |
+      | 8            | 2             | 10     |
+      | 12           | 0             | 12     |

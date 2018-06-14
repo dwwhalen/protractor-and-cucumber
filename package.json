@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -a localhost -p 1337",
-    "e2etest": "protractor conf.js"
+    "e2etest": "protractor protractor.conf.js"
   },
   "author": "https://github.com/dwwhalen",
   "license": "ISC",
