@@ -4,7 +4,7 @@ var chai = require('chai'),
 
 chai.use(chaiAsPromised);
 
-var HomePO = require('../page_objects/home.po.js'),
+var HomePO = require('../page-objects/home-page'),
   home = new HomePO();
 
 var steps = function () {

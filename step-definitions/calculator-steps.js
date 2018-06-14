@@ -2,16 +2,12 @@ var chai = require('chai'),
   chaiAsPromised = require('chai-as-promised'),
   expect = chai.expect;
 
-  var firstNumber = element(by.model('first'));
-  var secondNumber = element(by.model('second'));
-  var goButton = element(by.id('gobutton'));
-  var latestResult = element(by.binding('latest'));
-  var history = element.all(by.repeater('result in memory'));
+var latestResult = element(by.binding('latest'));
 
 chai.use(chaiAsPromised);
 
-var HomePO = require('../page_objects/home.po.js'),
-  home = new HomePO();
+var calculatorPage = require('../page-objects/calculator-page'),
+  calc = new calculatorPage();
 
 var steps = function () {
 
@@ -23,24 +19,20 @@ var steps = function () {
   });
 
   this.When(/^I set the (first|second) number to "([^"]*)"$/, function (fieldToSet, value, callback) {
-    // Write code here that turns the phrase above into concrete actions
-    if (fieldToSet == 'first')
-        firstNumber.sendKeys(value)
-    else
-        secondNumber.sendKeys(value);
-    callback();
+    calc
+      .setField(fieldToSet, value)
+      .then(callback);
   });
 
   this.When(/^I click submit$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    goButton.click()
-    .then(callback);
-    // callback(null, 'pending');
+    calc
+      .go()
+      .then(callback);
   });
 
   this.Then(/^the result is "([^"]*)"$/, function (expectedResult, callback) {
     expect(latestResult.getText()).to.eventually.equal(expectedResult)
-    .and.notify(callback);
+      .and.notify(callback);
   });
 
 };
