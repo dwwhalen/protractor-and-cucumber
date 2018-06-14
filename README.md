@@ -20,6 +20,8 @@ $ npm run e2etest
 ```
 ### Run/debug in VSCode
 ```sh
-- open the protractor-and-cucumber folder in VS Code
-- press F5 - that should result in a browser opening and the calculator features running
+- install VS Code.  consider installing the extension "Cucumber (Gherkin) Full Support" to make working with gherkin easier.
+
+- open the protractor-and-cucumber folder in VS Code.
+- press F5 - that should result in a browser opening and the calculator features running.  Breakpoints can be set as well.
 ```
