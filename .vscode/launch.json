@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug via Protractor",
+            "name": "Protractor Debug",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/built/cli.js",
