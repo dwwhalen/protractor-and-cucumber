@@ -17,4 +17,3 @@
     ]);
 
 })(window, window.angular);
-

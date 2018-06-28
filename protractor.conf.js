@@ -11,10 +11,10 @@ exports.config = {
   framework: 'custom',  // set to "custom" instead of cucumber.
   frameworkPath: require.resolve('protractor-cucumber-framework'),  // path relative to the current config file
   specs: [
-    './features/calculator.feature', 
+    './test/features/calculator.feature', 
   ],
   cucumberOpts: {
-    require: ['./step-definitions/*.js'],
+    require: ['./test/step-definitions/*.js'],
     'no-colors': false,
     tags: [],                      // <string[]> (expression) only execute the features or scenarios with tags matching the expression
     strict: true,                  // <boolean> fail if there are any undefined or pending steps
