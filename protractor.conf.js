@@ -14,7 +14,7 @@ exports.config = {
     './test/features/calculator.feature', 
   ],
   cucumberOpts: {
-    require: ['./test/step-definitions/*.js'],
+    require: ['./test/step-definitions/*.js', './test/features/support/*.js'],
     'no-colors': false,
     tags: [],                      // <string[]> (expression) only execute the features or scenarios with tags matching the expression
     strict: true,                  // <boolean> fail if there are any undefined or pending steps
