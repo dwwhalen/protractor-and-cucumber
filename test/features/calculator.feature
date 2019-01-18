@@ -9,7 +9,7 @@ Feature: Caculator
     Examples:
       | first_number | second_number | result |
       | 1            | 2             | 3      |
-      # | 4            | 2             | 6      |
-      # | 5            | 2             | 7      |
-      # | 8            | 2             | 11     |
-      # | 12           | 0             | 12     |
+      | 4            | 2             | 6      |
+      | 5            | 2             | 7      |
+      | 8            | 2             | 10     |
+      | 12           | 0             | 12     |

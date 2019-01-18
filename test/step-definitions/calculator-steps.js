@@ -11,28 +11,20 @@ var calculatorPage = require('../page-objects/calculator-page'),
 
 var steps = function () {
 
-  this.Given(/^I view the Calculator page$/, function (callback) {
-    browser
-      // .get(browser.params.env.hostname)
-      .get("http://juliemr.github.io/protractor-demo/")
-      .then(callback);
+  this.Given(/^I view the Calculator page$/, async function () {
+    await browser.get("http://juliemr.github.io/protractor-demo/");
   });
 
-  this.When(/^I set the (first|second) number to "([^"]*)"$/, function (fieldToSet, value, callback) {
-    calc
-      .setField(fieldToSet, value)
-      .then(callback);
+  this.When(/^I set the (first|second) number to "([^"]*)"$/, async function (fieldToSet, value) {
+    await calc.setField(fieldToSet, value);
   });
 
-  this.When(/^I click submit$/, function (callback) {
-    calc
-      .go()
-      .then(callback);
+  this.When(/^I click submit$/, async function () {
+    await calc.go();
   });
 
-  this.Then(/^the result is "([^"]*)"$/, function (expectedResult, callback) {
-    expect(latestResult.getText()).to.eventually.equal(expectedResult)
-      .and.notify(callback);
+  this.Then(/^the result is "([^"]*)"$/, function (expectedResult) {
+    expect(latestResult.getText()).to.eventually.equal(expectedResult);
   });
 
 };
