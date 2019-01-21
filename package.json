@@ -1,11 +1,11 @@
 {
   "name": "e2e",
   "version": "1.0.0",
-  "description": "Samplecucumber and Protractor code.",
+  "description": "Sample Cucumber and Protractor code.",
   "main": "index.js",
   "scripts": {
     "start": "http-server -a localhost -p 1337",
-    "e2etest": "protractor protractor.conf.js"
+    "e2etest": "protractor --specs ./test/features/calculator.feature"
   },
   "author": "https://github.com/dwwhalen",
   "license": "ISC",

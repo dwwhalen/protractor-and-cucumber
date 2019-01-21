@@ -3,8 +3,9 @@ Basic configuration to run your cucumber
 feature files and step definitions with protractor.
 **/
 exports.config = {
-  seleniumAddress: 'http://localhost:4444/wd/hub',
-  baseUrl: 'http://localhost:1337/',
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
+  // baseUrl: 'http://localhost:1337/',
+  directConnect: true,
   capabilities: {
       browserName:'chrome'
   },

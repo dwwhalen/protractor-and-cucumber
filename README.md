@@ -24,11 +24,11 @@ $ npm run e2etest
 - press F5 - that should result in a browser opening and the calculator features running.  Breakpoints can be set as well.
 - Run from command line in the main project directory:
 ```sh
-$ protractor --specs features/calculator.feature
+$ protractor --specs test/features/calculator.feature
 
 Or
 
-$ npm run e2etest
+$ npm run e2etest  (not working currently)
 ```
 
 ### Create the report in HTML format
