@@ -28,7 +28,7 @@ $ protractor --specs test/features/calculator.feature
 
 Or
 
-$ npm run e2etest  (not working currently)
+$ npm run e2etest
 ```
 
 ### Create the report in HTML format

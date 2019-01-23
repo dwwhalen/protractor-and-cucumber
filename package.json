@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -a localhost -p 1337",
-    "e2etest": "protractor --specs ./test/features/calculator.feature"
+    "e2etest": "protractor protractor.conf.js",
+    "webdriver-update": "webdriver-manager update"
   },
   "author": "https://github.com/dwwhalen",
   "license": "ISC",
