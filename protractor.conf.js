@@ -12,7 +12,7 @@ exports.config = {
   framework: 'custom',  // set to "custom" instead of cucumber.
   frameworkPath: require.resolve('protractor-cucumber-framework'),  // path relative to the current config file
   specs: [
-    './test/features/calculator.feature', 
+    './test/features/*.feature'
   ],
   cucumberOpts: {
     require: ['./test/step-definitions/*.js', './test/features/support/*.js'],

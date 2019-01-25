@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -a localhost -p 1337",
-    "e2etest": "protractor protractor.conf.js",
+    "e2e": "protractor protractor.conf.js",
     "webdriver-update": "webdriver-manager update"
   },
   "author": "https://github.com/dwwhalen",
