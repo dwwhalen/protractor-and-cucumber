@@ -1,39 +1,20 @@
-var hooks = function hooks() {
-    var fs = require('fs');
-    var tmp = require('tmp');
+var {After, Before, BeforeAll, AfterAll} = require('cucumber');
+var fs = require("fs");
 
-    this.Before(function () {
-        var tmpObject = tmp.dirSync({ unsafeCleanup: true });
-        this.tmpDir = fs.realpathSync(tmpObject.name);
+module.exports = function() {
+	
+	this.Before(async function () {
+        await console.log("In Before hook");
+        await browser.driver.manage().window().maximize();
     });
 
-    // this.After(function (scenario, callback) {
-    //     if (scenario.isFailed()) {
-    //         browser.manage().window().setSize(1024, 2048).then(result =>
-    //             browser.takeScreenshot().then(function (stream) {
-    //                 scenario.attach(new Buffer(stream, 'base64').toString('binary'), 'image/png', callback);
-    //             }, function (err) {
-    //                 callback(err);
-    //             }));
-    //     }
-    //     else {
-    //         callback();
-    //     }
-    // });
+	this.After(async function (scenario) {
+		await console.log("In After hook for scenario: " + scenario.getName());
+		
+		if (scenario.isFailed()) {
+			var myScreenshot = await browser.takeScreenshot();
+			await scenario.attach(new Buffer(myScreenshot, 'base64'), 'image/png'); 
+		}
+	});
 
-    this.After(function (scenario, callback) {
-        if (scenario.isFailed()) {
- 
-            browser.takeScreenshot().then(function (buffer) {
-              scenario.attach(buffer, 'image/png');
-            });
-            callback();
-        }
-        else {
-            callback();
-        }
-    });
-
-};
-
-module.exports = hooks;
+}

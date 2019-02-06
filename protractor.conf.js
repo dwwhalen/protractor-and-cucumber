@@ -30,5 +30,19 @@ exports.config = {
 },
 getPageTimeout: 30000,
 allScriptsTimeout: 30000,
-plugins: []
+plugins: [{
+  package: 'protractor-multiple-cucumber-html-reporter-plugin',
+  options:{
+   automaticallyGenerateReport: true,
+       removeExistingJsonReportFile: true,
+   displayDuration: true,
+   customData: {
+   title: 'Run info',
+   data: [
+     {label: 'Project', value: 'Cucumber POC'},
+     {label: 'Release', value: '1.0.0'}
+   ]
+   }
+  }
+ }]
 };

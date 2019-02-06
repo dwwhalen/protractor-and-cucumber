@@ -7,16 +7,12 @@ $ npm install -g protractor
 $ git clone https://github.com/dwwhalen/protractor-and-cucumber
 $ cd protractor-and-cucumber
 $ npm install
+$ npm run webdriver-update
 ```
-### Open another terminal session to start webdriver-manager
-```sh
-$ webdriver-manager update && webdriver-manager start
-```
-
 ### Open another terminal session and run the tests
 ```sh
 $ cd protractor-and-cucumber
-$ npm run e2etest
+$ npm run e2e
 ```
 ### Run/debug in VSCode
 - install VS Code.  consider installing the extension "Cucumber (Gherkin) Full Support" to make working with gherkin easier.
